@@ -1,12 +1,13 @@
 #!/usr/bin/env lsc
-
 require! fs
+const source = \Mandarin.txt
+#const source = \Cantonese.txt
 
 c2p = {}; p2c = []
 pin-p = {}
 p-count = 0
 
-for l in "#{fs.read-file-sync 'Mandarin.txt'}" / /\n/
+for l in "#{fs.read-file-sync source}" / /\n/
   [code, pin] = l / /\s+/
   continue unless code is /^....$/ # BMP
   char = String.fromCharCode parseInt code, 16

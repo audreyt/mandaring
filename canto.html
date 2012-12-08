@@ -1,8 +1,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Manda Ring</title>
-<script type="text/javascript" charset="utf-8" src="manda.js"></script>
+<title>Canto Ring</title>
+<script type="text/javascript" charset="utf-8" src="canto.js"></script>
 <script type="text/javascript" charset="utf-8" src="ring.js"></script>
 <style>
     body {
@@ -20,25 +20,25 @@
         resize: none;
         font-size: 140%;
     }
-    #manda {
+    #canto {
         background: #fff;
     }
 </style>
 <script type="text/javascript" charset="utf-8">
-    function manda (x) {
+    function canto (x) {
         document.getElementById('ring').value = encodeRing(x);
         document.getElementById('rev').value = decodeRing(x);
-        document.getElementById('manda').select();
+        document.getElementById('canto').select();
     }
     function rotate (x) {
-        document.getElementById('manda').value = x;
-        manda(x);
+        document.getElementById('canto').value = x;
+        canto(x);
     }
 </script>
 </head>
-<body onload="manda(document.getElementById('manda').value)">
+<body onload="canto(document.getElementById('canto').value)">
 <textarea id="rev" onfocus="rotate(this.value)"></textarea>
-<textarea autofocus id="manda" onchange="manda(this.value)" onkeyup="manda(this.value)">
+<textarea autofocus id="canto" onchange="canto(this.value)" onkeyup="canto(this.value)">
 請貼上中文，並用 Tab 和 Shift-Tab 鍵切換旋轉次數。
 </textarea>
 <textarea id="ring" onfocus="rotate(this.value)"></textarea>
