@@ -28,19 +28,17 @@
     function canto (x) {
         document.getElementById('ring').value = encodeRing(x);
         document.getElementById('rev').value = decodeRing(x);
-        document.getElementById('canto').select();
     }
     function rotate (x) {
         document.getElementById('canto').value = x;
         canto(x);
+        document.getElementById('canto').select();
     }
 </script>
 </head>
-<body onload="canto(document.getElementById('canto').value)">
+<body onload="rotate('請貼上中文，並用 Tab 和 Shift-Tab 鍵切換旋轉次數。')">
 <textarea id="rev" onfocus="rotate(this.value)"></textarea>
-<textarea autofocus id="canto" onchange="canto(this.value)" onkeyup="canto(this.value)">
-請貼上中文，並用 Tab 和 Shift-Tab 鍵切換旋轉次數。
-</textarea>
+<textarea autofocus id="canto" onchange="canto(this.value)" onkeyup="canto(this.value)"></textarea>
 <textarea id="ring" onfocus="rotate(this.value)"></textarea>
 </body>
 </html>
