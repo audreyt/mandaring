@@ -26,7 +26,8 @@ for p, cs of p2c
 
 #console.log ring
 rev = ''
-``for (var i = ring.length - 1; i >= 0; rev += ring[i--]) {}``
+i = ring.length - 1
+while i, rev += ring[i--] then void # Fast string reversal
 
 encode = -> (* '') <| for c in it
   idx = ring.index-of c
